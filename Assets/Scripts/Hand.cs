@@ -1,16 +1,19 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem.EnhancedTouch;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(RectTransform))]
-public class Hand : MonoBehaviour
+public class Hand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private enum State
     {
         Idle,
         TakingTool,
+        ColoringTool,
         ReturningTool,
         TargetFace,
         UsingTool
@@ -19,14 +22,15 @@ public class Hand : MonoBehaviour
     public static Hand instance { get; private set; }
 
     [Header("Parameters to set")]
+    [SerializeField] CanvasGroup canvasGroup;
     [SerializeField] Image imageHand;
     [SerializeField] Image imageTool;
-    [SerializeField] Image imageCoverFinger;
     [SerializeField] float speed = 10f;
 
     [Header("Parameters to read")]
     [SerializeField] private State currentState = State.Idle;
     [SerializeField] bool isShown = true;
+    [SerializeField] bool isDragged;
 
     //“екущий инструмент в руке
     [SerializeField] private TargetData currentTool;
@@ -111,21 +115,36 @@ public class Hand : MonoBehaviour
     {
         if (target == null)
         {
-            Vector2 screenPosition = newTarget.GetScreenPosition(this);
-            Vector2 localPosition = GetLocalPoint(screenPosition);
-
             if (newTarget is Tool tool)
             {
-                //≈сли нова€ цель - инструмент, то провер€ем, нет ли в руках друго инструмента, если есть, то сначала возвращаем (требуемый инстурменрт остаетс€ в переменной target)
-                //≈сли рука пуста€, то просто начинаем движение к цели, чтобы его вз€ть
-                if (currentTool?.handTarget != null && currentTool.handTarget != tool)
-                {
-                    SetState(State.ReturningTool);
-                    target = new TargetData(newTarget, localPosition);
-                }
-                else
+                //≈сли нова€ цель - инструмент, то провер€ем, нет ли в руках друго инструмента
+
+                if (GetCurrentTool() == null)   //–ука пуста€, просто начинаем движение к цели, чтобы его вз€ть
                 {
                     SetState(State.TakingTool);
+
+                    Vector2 screenPosition = tool.GetScreenPosition(this);
+                    Vector2 localPosition = GetLocalPoint(screenPosition);
+                    target = new TargetData(newTarget, localPosition);
+                }
+                else if (GetCurrentTool() == tool)  //¬ руке уже стоит этот инструент, возвращаем его
+                {
+                    SetState(State.ReturningTool);
+                }
+                else if (GetCurrentTool().GetToolType() == tool.GetToolType() && tool.IsColorable())    //¬ руке есть другой интрумент, но этого же типа и может быть перекрашен, перекрашиваем
+                {
+                    SetState(State.ColoringTool);
+
+                    Vector2 screenPosition = tool.GetPalleteScreenPosition(this);
+                    Vector2 localPosition = GetLocalPoint(screenPosition);
+                    target = new TargetData(newTarget, localPosition);
+                }
+                else //¬ руке полностью другой инструмент, сначала возвращаем (требуемый инструмент остаетс€ в переменной target), а потом берЄм новый
+                {
+                    SetState(State.ReturningTool);
+
+                    Vector2 screenPosition = tool.GetScreenPosition(this);
+                    Vector2 localPosition = GetLocalPoint(screenPosition);
                     target = new TargetData(newTarget, localPosition);
                 }
             }
@@ -136,6 +155,9 @@ public class Hand : MonoBehaviour
                 if (face.IsCanUse(this))
                 {
                     SetState(State.TargetFace);
+
+                    Vector2 screenPosition = newTarget.GetScreenPosition(this);
+                    Vector2 localPosition = GetLocalPoint(screenPosition);
                     target = new TargetData(newTarget, localPosition);
                 }
             }
@@ -172,7 +194,7 @@ public class Hand : MonoBehaviour
             }
             else
             {
-                if (currentTool?.handTarget == null)
+                if (GetCurrentTool() == null)
                 {
                     if (isShown)
                         Hide();
@@ -184,6 +206,9 @@ public class Hand : MonoBehaviour
     #region Update (ƒейсвуем в зависимости от состо€ни€ –уки)
     private void Update()
     {
+        if (isDragged)
+            return;
+
         switch (currentState)
         {
             //–ука свободна в данный момент. ∆дЄт приказа в виде ÷ели
@@ -198,7 +223,7 @@ public class Hand : MonoBehaviour
                 break;
 
             //–ука движетс€ к новому инструменту (предположительно он в target)
-            //ƒалее –ука будет свободна с интрументов в руках
+            //≈сли инсутрмент нужно дополнительно покрасить, то движемс€ к краске, иначе –ука будет свободна с интрументом в руках
             case State.TakingTool:
                 {
                     if (target != null)
@@ -207,8 +232,18 @@ public class Hand : MonoBehaviour
                         if (reached)
                         {
                             target.handTarget.HandUse(this);
-                            target = null;
-                            SetState(State.Idle);
+
+                            if (target.handTarget is Tool tool && tool.IsColorable())
+                            {
+                                Vector2 screenPosition = tool.GetPalleteScreenPosition(this);
+                                target.localPosition = GetLocalPoint(screenPosition);
+                                SetState(State.ColoringTool);
+                            }
+                            else
+                            {
+                                target = null;
+                                SetState(State.Idle);
+                            }
                         }
                     }
                     else
@@ -216,16 +251,40 @@ public class Hand : MonoBehaviour
                 }
                 break;
 
+            //–ука движетс€ к краске (предположительно он в target)
+            //ƒалее –ука будет свободна с интрументов в руках
+            case State.ColoringTool:
+                {
+                    if (target != null)
+                    {
+                        UpdatePosition(target.localPosition, out bool reached);
+
+                        if (reached)
+                        {
+                            if (GetCurrentTool() != target.handTarget)
+                                target.handTarget.HandUse(this);
+
+                            target = null;
+                            SetState(State.Idle);
+                        }
+                    }
+                    else
+                    {
+                        SetState(State.Idle);
+                    }
+                }
+                break;
+
             //–ука движетс€ вернуть инструмент на место (где он и лежал изначально) (текущий интрумент в currentTool)
             //ƒалее, если есть цель вз€ть новый инструмент, то отдаЄм приказ в виде состо€ни€. »наче просто освобождаем руку
             case State.ReturningTool:
                 {
-                    if (currentTool != null)
+                    if (GetCurrentTool() != null)
                     {
                         UpdatePosition(currentTool.localPosition, out bool reached);
                         if (reached)
                         {
-                            currentTool.handTarget.HandUse(this);
+                            GetCurrentTool().HandUse(this);
 
                             if (target != null)
                                 SetState(State.TakingTool);
@@ -295,7 +354,7 @@ public class Hand : MonoBehaviour
     //—ейчас стоит минимальное расто€ние до объекта 25f
     private void UpdatePosition(Vector2 targetPosition, out bool isReached)
     {
-        if (Vector3.Distance(rectMain.anchoredPosition, targetPosition) > 25f)
+        if (Vector3.Distance(rectMain.anchoredPosition, targetPosition) > 10f)
         {
             rectMain.anchoredPosition = Vector3.Lerp(
             rectMain.anchoredPosition,
@@ -314,11 +373,6 @@ public class Hand : MonoBehaviour
     #region Show\Hide (ћетоды плавного скрывани€ и отображени€ руки)
     private void Show()
     {
-        if (imageTool != null)
-            imageTool.gameObject.SetActive(true);
-        if (imageCoverFinger != null)
-            imageCoverFinger.gameObject.SetActive(true);
-
         StopAllCoroutines();
         StartCoroutine(SmoothShow());
 
@@ -328,24 +382,22 @@ public class Hand : MonoBehaviour
     {
         if (imageHand != null)
         {
-            float alpha = imageHand.color.a;
+            float alpha = canvasGroup.alpha;
 
             int errorCount = 0;
             while (alpha < 1 && errorCount < 9999)
             {
                 alpha += Time.deltaTime * 10;
-                imageHand.color = new Color(1, 1, 1, alpha);
+                canvasGroup.alpha = alpha;
                 yield return null;
             }
+
+            canvasGroup.blocksRaycasts = true;
+            canvasGroup.interactable = true;
         }
     }
     private void Hide()
     {
-        if (imageTool != null)
-            imageTool.gameObject.SetActive(false);
-        if (imageCoverFinger != null)
-            imageCoverFinger.gameObject.SetActive(false);
-
         StopAllCoroutines();
         StartCoroutine(SmootHide());
 
@@ -355,15 +407,18 @@ public class Hand : MonoBehaviour
     {
         if (imageHand != null)
         {
-            float alpha = imageHand.color.a;
+            float alpha = canvasGroup.alpha;
 
             int errorCount = 0;
             while (alpha > 0 && errorCount < 9999)
             {
                 alpha -= Time.deltaTime * 10;
-                imageHand.color = new Color(1, 1, 1, alpha);
+                canvasGroup.alpha = alpha;
                 yield return null;
             }
+
+            canvasGroup.blocksRaycasts = false;
+            canvasGroup.interactable = false;
         }
     }
     #endregion
@@ -376,6 +431,37 @@ public class Hand : MonoBehaviour
         else
             actionOnClipEnd?.Invoke();
     }
+
+    #region Drag
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        isDragged = true;
+    }
+    public void OnDrag(PointerEventData eventData)
+    {
+        var touchPosition = InputManager.instance.currentPosition;
+        Vector2 localPos = GetLocalPoint(touchPosition);
+        rectMain.anchoredPosition = localPos;
+    }
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        isDragged = false;
+
+        var touchPosition = InputManager.instance.currentPosition;
+
+        //ѕровер€ем, если ли лицо под пальцем
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(touchPosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+        if (hit.collider != null)
+        {
+            if (hit.collider.CompareTag("Face") && hit.collider.TryGetComponent(out WomanFace womanFace))
+            {
+                SetTarget(womanFace);
+            }
+        }
+    }
+    #endregion
 
     private void OnDestroy()
     {

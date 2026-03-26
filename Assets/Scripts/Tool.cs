@@ -28,6 +28,10 @@ public class Tool : HandTarget
     {
         return indexMakeUp;
     }
+    public bool IsColorable()
+    {
+        return actualTool != null;
+    }
 
     //ћетод нажати€ на инструменот как на кнопку
     private void OnToolClick()
@@ -76,15 +80,15 @@ public class Tool : HandTarget
     {
         if (hand != null)
         {
-            if (hand.GetCurrentTool() == null)
-            {
-                TakeTool();
-                hand.SetTool(this);
-            }
-            else if (hand.GetCurrentTool() == this)
+            if (hand.GetCurrentTool() == this)
             {
                 ReturnTool();
                 hand.SetTool(null);
+            }
+            else
+            {
+                TakeTool();
+                hand.SetTool(this);
             }
         }
     }
@@ -94,8 +98,17 @@ public class Tool : HandTarget
     public override Vector2 GetScreenPosition(Hand hand)
     {
         if (actualTool != null)
+        {
             return actualTool.GetComponent<RectTransform>().position;
-        else
-            return GetComponent<RectTransform>().position;
+        }
+
+        return GetComponent<RectTransform>().position;
+    }
+
+    //—пециальный метод дл€ инстурмента, который возвращаем именно свою позицию
+    //¬ случае паллетки, возвращает позицию паллетки
+    public Vector2 GetPalleteScreenPosition(Hand hand)
+    {
+        return GetComponent<RectTransform>().position;
     }
 }

@@ -71,4 +71,6 @@ public class WomanFace : HandTarget, IPointerClickHandler
         else
             return Vector2.zero;
     }
+
+    
 }

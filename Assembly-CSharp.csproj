@@ -65,9 +65,12 @@
     <Compile Include="Assets\Scripts\WomanMakeUp.cs" />
     <Compile Include="Assets\Scripts\WomanFace.cs" />
     <Compile Include="Assets\Scripts\Tool.cs" />
+    <Compile Include="Assets\Scripts\IInputManager.cs" />
+    <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\Hand.cs" />
     <Compile Include="Assets\Scripts\HandAnimation.cs" />
     <Compile Include="Assets\Scripts\Tab.cs" />
+    <Compile Include="Assets\Mobile_Action.cs" />
     <Compile Include="Assets\Scripts\HandTarget.cs" />
   </ItemGroup>
   <ItemGroup>

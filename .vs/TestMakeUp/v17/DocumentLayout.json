@@ -3,32 +3,27 @@
   "WorkspaceRootPath": "C:\\Unity projects\\TestMakeUp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|C:\\Unity projects\\TestMakeUp\\assets\\scripts\\tool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|c:\\unity projects\\testmakeup\\assets\\scripts\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|C:\\Unity projects\\TestMakeUp\\assets\\scripts\\iinputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\iinputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|C:\\Unity projects\\TestMakeUp\\assets\\scripts\\womanface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\womanface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|c:\\unity projects\\testmakeup\\assets\\scripts\\hand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|c:\\unity projects\\testmakeup\\assets\\scripts\\handanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\handanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|C:\\Unity projects\\TestMakeUp\\assets\\scripts\\tool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|C:\\Unity projects\\TestMakeUp\\assets\\scripts\\womanmakeup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\womanmakeup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|C:\\Unity projects\\TestMakeUp\\assets\\scripts\\tab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|C:\\Unity projects\\TestMakeUp\\assets\\scripts\\tabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|c:\\unity projects\\testmakeup\\assets\\scripts\\womanface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8483EC26-1906-4CE5-77FD-0C64BCECDF29}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\womanface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Unity projects\\OfficeIdler\\Assets\\Scripts\\Input\\MousePointManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,104 +32,91 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 106,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "WomanMakeUp.cs",
-              "DocumentMoniker": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\WomanMakeUp.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\WomanMakeUp.cs",
-              "ToolTip": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\WomanMakeUp.cs",
-              "RelativeToolTip": "Assets\\Scripts\\WomanMakeUp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T20:27:24.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Tab.cs",
-              "DocumentMoniker": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\Tab.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Tab.cs",
-              "ToolTip": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\Tab.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Tab.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T11:56:55.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HandAnimation.cs",
-              "DocumentMoniker": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\HandAnimation.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\HandAnimation.cs",
-              "ToolTip": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\HandAnimation.cs",
-              "RelativeToolTip": "Assets\\Scripts\\HandAnimation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T23:01:00.238Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TabManager.cs",
-              "DocumentMoniker": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\TabManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\TabManager.cs",
-              "ToolTip": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\TabManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\TabManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T12:11:50.781Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WomanFace.cs",
-              "DocumentMoniker": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\WomanFace.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\WomanFace.cs",
-              "ToolTip": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\WomanFace.cs",
-              "RelativeToolTip": "Assets\\Scripts\\WomanFace.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAA3wEMAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T17:31:36.156Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 294,
+          "DockedWidth": 140,
           "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Hand.cs",
-              "DocumentMoniker": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\Hand.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Hand.cs",
-              "ToolTip": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\Hand.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Hand.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCoAAABpAAAAAAAAAA==",
+              "Title": "IInputManager.cs",
+              "DocumentMoniker": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\IInputManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\IInputManager.cs",
+              "ToolTip": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\IInputManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\IInputManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T13:08:29.421Z",
+              "WhenOpened": "2026-03-26T09:52:21.461Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "InputManager.cs",
+              "DocumentMoniker": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\InputManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InputManager.cs",
+              "ToolTip": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\InputManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InputManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T09:51:14.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WomanFace.cs",
+              "DocumentMoniker": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\WomanFace.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\WomanFace.cs",
+              "ToolTip": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\WomanFace.cs",
+              "RelativeToolTip": "Assets\\Scripts\\WomanFace.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T11:31:35.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Tool.cs",
               "DocumentMoniker": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\Tool.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Tool.cs",
               "ToolTip": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\Tool.cs",
               "RelativeToolTip": "Assets\\Scripts\\Tool.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwB8AAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAUwGwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T13:13:11.694Z",
+              "WhenOpened": "2026-03-26T11:31:17.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MousePointManager.cs",
+              "DocumentMoniker": "C:\\Unity projects\\OfficeIdler\\Assets\\Scripts\\Input\\MousePointManager.cs",
+              "RelativeDocumentMoniker": "..\\OfficeIdler\\Assets\\Scripts\\Input\\MousePointManager.cs",
+              "ToolTip": "C:\\Unity projects\\OfficeIdler\\Assets\\Scripts\\Input\\MousePointManager.cs",
+              "RelativeToolTip": "..\\OfficeIdler\\Assets\\Scripts\\Input\\MousePointManager.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T14:13:09.109Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 260,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Hand.cs",
+              "DocumentMoniker": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\Hand.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Hand.cs",
+              "ToolTip": "C:\\Unity projects\\TestMakeUp\\Assets\\Scripts\\Hand.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Hand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T13:08:29.421Z",
               "EditorCaption": ""
             }
           ]
